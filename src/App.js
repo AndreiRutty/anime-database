@@ -13,12 +13,12 @@ function App() {
     const temp = await fetch(
       `https://api.jikan.moe/v3/top/anime/1/bypopularity`
     ).then((res) => res.json());
-    setTopAnime(temp.top.slice(0, 5));
+    setTopAnime(temp.top.slice(0, 10));
   };
 
   const fetchAnime = async (query) => {
     const temp = await fetch(
-      `https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=acs&limit=10`
+      `https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=acs`
     ).then((res) => res.json());
     SetAnimeList(temp.results);
   };

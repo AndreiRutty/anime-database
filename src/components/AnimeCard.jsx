@@ -1,15 +1,28 @@
 import React from "react";
+import "../styles/animecard.scss";
 
 const AnimeCard = ({ anime }) => {
   return (
-    <article className="anime-card">
-      <a href={anime.url} target="_blank" rel="noreferrer">
-        <figure>
+    <div className="card">
+      <div className="card-inner">
+        <div className="card-front">
           <img src={anime.image_url} alt="" />
-        </figure>
-        <h3>{anime.title}</h3>
-      </a>
-    </article>
+        </div>
+        <div className="card-back">
+          <h3>{anime.title}</h3>
+          <div className="info">
+            <p>{`type: ${anime.type}`}</p>
+            <p>{`episodes: ${anime.episodes}`}</p>
+            <p>{`score: ${anime.score}`}</p>
+            <p>{`rated: '${anime.rated}'`}</p>
+            <p>{`members: ${anime.members}`}</p>
+          </div>
+          <a href={anime.url} target="_blank" rel="noreferrer">
+            More Info
+          </a>
+        </div>
+      </div>
+    </div>
   );
 };
 
