@@ -5,18 +5,11 @@ const Sidebar = ({ topAnime }) => {
     <aside>
       <nav>
         <h3>Top Anime</h3>
-        <a href="#" target="_blank" rel="noreferrer">
-          Attack on Titan
-        </a>
-        <a href="#" target="_blank" rel="noreferrer">
-          One Punch Man
-        </a>
-        <a href="#" target="_blank" rel="noreferrer">
-          Sword Art Online
-        </a>
-        <a href="#" target="_blank" rel="noreferrer">
-          Naruto
-        </a>
+        {topAnime.map((anime) => (
+          <a key={anime.mal_id} href= {anime.url} target="_blank" rel="noreferrer">
+            {`${anime.rank}. ${anime.title}`}
+          </a>
+        ))}
       </nav>
     </aside>
   );
