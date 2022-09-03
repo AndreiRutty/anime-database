@@ -1,8 +1,9 @@
 import React from "react";
+import '../styles/topanime.scss'
 
-const Sidebar = ({ topAnime }) => {
+const TopAnime = ({ topAnime }) => {
   return (
-    <aside className="sidebar">
+    <div className="topanime-container">
       <nav>
         <h3>Top Anime</h3>
         {topAnime.map((anime) => (
@@ -16,8 +17,8 @@ const Sidebar = ({ topAnime }) => {
           </a>
         ))}
       </nav>
-    </aside>
+    </div>
   );
 };
 
-export default Sidebar;
+export default TopAnime;

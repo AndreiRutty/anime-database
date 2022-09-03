@@ -8,6 +8,7 @@ function App() {
   const [animeList, SetAnimeList] = useState([]);
   const [topAnime, setTopAnime] = useState([]);
   const [search, setSearch] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   const getTopAnime = async () => {
     const temp = await fetch(
@@ -28,13 +29,17 @@ function App() {
     fetchAnime(search);
   };
 
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   useEffect(() => {
     getTopAnime();
   }, []);
 
   return (
     <div className="App">
-      <Header />
+      <Header toggle={toggle} isOpen={isOpen} />
       <div className="content-wrap">
         <Sidebar topAnime={topAnime} />
         <MainContent
@@ -42,6 +47,8 @@ function App() {
           search={search}
           animeList={animeList}
           setSearch={setSearch}
+          isOpen={isOpen}
+          topAnime={topAnime}
         />
       </div>
     </div>
