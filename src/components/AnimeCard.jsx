@@ -6,7 +6,7 @@ const AnimeCard = ({ anime }) => {
     <div className="card">
       <div className="card-inner">
         <div className="card-front">
-          <img src={anime.image_url} alt="" />
+          <img src={anime.images.jpg.image_url} alt="" />
         </div>
         <div className="card-back">
           <h3>{anime.title}</h3>

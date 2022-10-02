@@ -12,7 +12,7 @@ const Sidebar = ({ topAnime }) => {
             target="_blank"
             rel="noreferrer"
           >
-            {`${anime.rank}. ${anime.title}`}
+            {`${anime.title}`}
           </a>
         ))}
       </nav>
